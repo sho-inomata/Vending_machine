@@ -1,28 +1,30 @@
 
-# 商品一覧メソッド
-def drink_list(drinks)
-  @drink = drinks
+def set_drinks(cola, saider, orange, coffee, pepper, tea, water, milk, apple, remon)
+  @drinks = [cola, saider, orange, coffee, pepper, tea, water, milk, apple, remon]
+end
 
+
+# 商品一覧メソッド
+def drink_list
+  
   puts "商品一覧"
   puts "-----------------------------------"
-  drinks.each do |drink|
-    puts "#{drink.name}:#{drink.price}円"
+  @drinks.each do |drink|
+    puts "商品番号:#{drink.id}　#{drink.name}:#{drink.price}円"
   end
   puts "-----------------------------------"
-  puts "商品を選んでください"
+  puts "商品番号を選んでください"
 end
 
 # 商品を選んでその商品が存在するか確認する
-def seach_drink(drinks)
-
+def seach_drink
   loop {
     # 商品名を受け取る
-    @product = gets.chomp
+    @product_id = gets.to_i
 
-    # 入力した商品があるか確認
-    for drink in drinks
-      if @product == drink.name
-            @select_drink = drink
+    @drinks.each do |drink|
+      if  @product_id == drink.id
+          @select_drink = drink
       end
     end
 
@@ -30,10 +32,10 @@ def seach_drink(drinks)
     if @select_drink.nil?
       puts "その商品はありません。"  
       puts "もう一度選んでください。"
-      else
-        puts "#{@select_drink.price}円入れてください"
-        break
-      end
+    else
+      puts "#{@select_drink.price}円入れてください"
+      break
+    end
   }
 end
 
@@ -43,7 +45,7 @@ def calculation
 
   if drink_price >= @select_drink.price
     change = drink_price - @select_drink.price
-    puts "ガランッ！！#{@product}が出てきた！！"
+    puts "ガランッ！！#{@select_drink.name}が出てきた！！"
     puts "お釣りは#{change}円です"
   else
     puts "お金が足りません" 
