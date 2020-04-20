@@ -1,8 +1,24 @@
+require './products.rb'
 
-def set_drinks(cola, saider, orange, coffee, pepper, tea, water, milk, apple, remon)
-  @drinks = [cola, saider, orange, coffee, pepper, tea, water, milk, apple, remon]
+def making_drinks
+  [
+  cola = Products.new(name: "コカコーラ", price: 500, id: 1),
+  saider = Products.new(name: "サイダー", price: 200, id: 2),
+  orange = Products.new(name: "オレンジジュース", price: 300, id: 3),
+  coffee = Products.new(name: "コーヒー", price: 150, id: 4),
+  pepper = Products.new(name: "ドクターペッパー", price: 450, id: 5),
+  tea = Products.new(name: "お茶", price: 250, id: 6),
+  water = Products.new(name: "おいしい水", price: 350, id: 7),
+  milk = Products.new(name: "牛乳", price: 600, id: 8),
+  apple = Products.new(name: "リンゴジュース", price: 550, id: 9),
+  remon = Products.new(name: "CCレモン", price: 150, id: 10)
+  ]
 end
 
+# 改善中
+def set_drinks(pruducts)
+  @drinks = [cola, saider, orange, coffee, pepper, tea, water, milk, apple, remon]
+end
 
 # 商品一覧メソッド
 def drink_list
@@ -22,11 +38,7 @@ def seach_drink
     # 商品名を受け取る
     @product_id = gets.to_i
 
-    @drinks.each do |drink|
-      if  @product_id == drink.id
-          @select_drink = drink
-      end
-    end
+    @select_drink = @drinks.find {|drink| drink.id == @product_id}
 
     # 変数に値が入っているか確認
     if @select_drink.nil?
