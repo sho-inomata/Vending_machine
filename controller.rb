@@ -15,7 +15,7 @@ def making_drinks
   ]
 end
 
-# 改善中
+# 商品を配列にまとめる
 def set_drinks(products)
   @drinks = products
 end
