@@ -2,21 +2,31 @@ require './products.rb'
 
 def making_drinks
   [
-  cola = Products.new(name: "コカコーラ", price: 500, id: 1),
-  saider = Products.new(name: "サイダー", price: 200, id: 2),
-  orange = Products.new(name: "オレンジジュース", price: 300, id: 3),
-  coffee = Products.new(name: "コーヒー", price: 150, id: 4),
-  pepper = Products.new(name: "ドクターペッパー", price: 450, id: 5),
-  tea = Products.new(name: "お茶", price: 250, id: 6),
-  water = Products.new(name: "おいしい水", price: 350, id: 7),
-  milk = Products.new(name: "牛乳", price: 600, id: 8),
-  apple = Products.new(name: "リンゴジュース", price: 550, id: 9),
-  remon = Products.new(name: "CCレモン", price: 150, id: 10)
+  Products.new(name: "コカコーラ", price: 500, id: 1),
+  Products.new(name: "サイダー", price: 200, id: 2),
+  Products.new(name: "オレンジジュース", price: 300, id: 3),
+  Products.new(name: "コーヒー", price: 150, id: 4),
+  Products.new(name: "ドクターペッパー", price: 450, id: 5),
+  Products.new(name: "お茶", price: 250, id: 6),
+  Products.new(name: "おいしい水", price: 350, id: 7),
+  Products.new(name: "牛乳", price: 600, id: 8),
+  Products.new(name: "リンゴジュース", price: 550, id: 9),
+  Products.new(name: "CCレモン", price: 150, id: 10)
   ]
 end
 
 # 改善中
-def set_drinks(pruducts)
+def set_drinks(products)
+  cola = products[0]
+  saider = products[1]
+  orange = products[2]
+  coffee = products[3]
+  pepper = products[4]
+  tea = products[5]
+  water = products[6]
+  milk = products[7]
+  apple = products[8]
+  remon = products[9]
   @drinks = [cola, saider, orange, coffee, pepper, tea, water, milk, apple, remon]
 end
 
