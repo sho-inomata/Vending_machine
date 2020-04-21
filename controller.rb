@@ -17,17 +17,7 @@ end
 
 # 改善中
 def set_drinks(products)
-  cola = products[0]
-  saider = products[1]
-  orange = products[2]
-  coffee = products[3]
-  pepper = products[4]
-  tea = products[5]
-  water = products[6]
-  milk = products[7]
-  apple = products[8]
-  remon = products[9]
-  @drinks = [cola, saider, orange, coffee, pepper, tea, water, milk, apple, remon]
+  @drinks = products
 end
 
 # 商品一覧メソッド
